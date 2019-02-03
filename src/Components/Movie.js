@@ -29,10 +29,12 @@ class Movie extends Component {
             <div className='movie'>
               <img className='poster' src={url} />
               <div className="movie-info">
-                <span className='movie-rating'>{movie.vote_average}</span>
-                <h1 className='movie-title'>{movie.title}</h1>
-                <p className='movie-release'>{movie.release_date}</p>
+                <span className='movie-rating test'>{movie.vote_average}
+                <p>{movie.title}</p>
+                <p className='movie-release'>{movie.release_date}</p></span>
+                
                 <p className='movie-overview'>{movie.overview}</p>
+                <hr/>
               </div>
             </div>
           </div >
