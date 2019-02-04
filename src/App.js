@@ -16,8 +16,10 @@ class App extends Component {
   componentDidMount() {
     axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3327de82c58bbb5e77470af2495090c6&language=en-US').then(res => {
       console.log(res)
+      let count = 18
+      let movies = res.data.results.slice(0, count)
       this.setState({
-        movies: res.data.results.slice(0, 18)
+        movies: movies
       })
 
     })
@@ -35,9 +37,11 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>Movie-App</h1>
-        <Search UpdateMovie={this.handleUpdateMovie} />
-        <button onClick={this.handleHome}>Home</button>
-        <Sort UpdateMovie={this.handleUpdateMovie} />
+        <div class='sort'>
+          <Search UpdateMovie={this.handleUpdateMovie} />
+          <button onClick={this.handleHome}>Home</button>
+          <Sort UpdateMovie={this.handleUpdateMovie} />
+        </div>
         <Movie state={this.state} />
       </div>
     )

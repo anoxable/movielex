@@ -1,7 +1,11 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@font-face {
+  font-family: 'montserat';
+  src: local('MyFont'), url(./fonts/Montserrat-Regular.ttf) format('woff');
+}
+@font-face {
+  font-family: 'montserat-medium';
+  src: local('MyFont'), url(./fonts/Montserrat-SemiBold.ttf) format('woff');
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -29,7 +33,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  background-color: #F6F9FC;
+  font-family: montserat;
 }
 ol, ul {
 	list-style: none;
@@ -56,7 +62,7 @@ table {
   grid-template-columns: repeat(3,1fr);
   font-size: 0.6em;
   line-height: 1.3em;
-  grid-gap: 1em;
+  grid-gap: 2em;
   text-align: start;
   
   
@@ -64,33 +70,49 @@ table {
 .poster{
   grid-row: 1/1;
   justify-self: start;
+  border-radius: 1em 0em 0em 1em;
 }
 .movie{
+  overflow: hidden;
+  margin:1em;
   display:grid;
   grid-template-columns: 3fr 3fr 1fr;
-  box-shadow: 0px 0px 5px 3px rgba(115,114,115,0.29);
+  box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3);
+  border-radius: 1em;
+  transition: transform .1s;
 }
 .movie:hover{
-  background-color: darkgrey;
+  box-shadow:0 23px 97px -15px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3);
+  cursor:pointer;
+   transform: scale(1.02);
 }
 .movie-info{
+  
+  margin: 1em;
   display: grid;
   grid-template-rows: 1fr 4fr;
   justify-self: start;
-
-  
 }
 .movie-rating{
-  height: 10px;
-  width: 10px;
-  background-color: lightskyblue;
   border-radius: 5px;
   align-self: center;
-  
-  
+  font-family: montserat-medium;
+  float: right;
 }
-
 .movie-overview{
   align-self:center;
 }
+.movie-title{
+  font-family: montserat-medium;
+ 
+  
+}
+.movie-release{
+  font-family: montserat;
+}
 
+meter::-webkit-meter-bar {background: #e6e6e9;
+border-radius: 5px;box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;} /*background color of bar*/
+meter::-webkit-meter-optimum-value {background: green;}
+meter::-webkit-meter-suboptimum-value{background:orange;}
+meter::-webkit-meter-even-less-good-value{background:red;}
