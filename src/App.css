@@ -116,3 +116,40 @@ border-radius: 5px;box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;} /*background co
 meter::-webkit-meter-optimum-value {background: green;}
 meter::-webkit-meter-suboptimum-value{background:orange;}
 meter::-webkit-meter-even-less-good-value{background:red;}
+
+@media only screen and (max-width: 1200px) {
+  .wrapp {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  font-size: 0.6em;
+  line-height: 1.3em;
+  grid-gap: 2em;
+  text-align: start;
+  
+  
+}
+}
+@media only screen and (max-width: 800px) {
+  .wrapp {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  font-size: 0.7em;
+  line-height: 1.1em;
+  grid-gap: 2em;
+  text-align: start;
+  
+  
+}
+}
+@media only screen and (max-width: 450px) {
+  .wrapp {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  font-size: 0.5em;
+  line-height: 1.1em;
+  grid-gap: 2em;
+  text-align: start;
+  
+  
+}
+}
