@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import Search from './Components/Search'
 import './App.css'
 import axios from 'axios'
+import Movies from './Components/Movies'
 import Movie from './Components/Movie'
 import Sort from './Components/Sort'
+import HomeButton from './Components/HomeButton'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -35,15 +38,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <h1>Movie-App</h1>
-        <div className='sort'>
-          <Search UpdateMovie={this.handleUpdateMovie} />
-          <button onClick={this.handleHome}>Home</button>
-          <Sort UpdateMovie={this.handleUpdateMovie} />
+      <BrowserRouter>
+        <div className='App'>
+          <h1>Movie-App</h1>
+          <div className='sort'>
+            <Search UpdateMovie={this.handleUpdateMovie} />
+            <HomeButton />
+            <Sort UpdateMovie={this.handleUpdateMovie} />
+          </div>
+          <Route exact path='/' render={(props) => <Movies {...props} state={this.state} />} />
+          <Route exact path='/movie' component={Movie} />
         </div>
-        <Movie state={this.state} />
-      </div>
+      </BrowserRouter>
     )
   }
 }
