@@ -47,7 +47,7 @@ class App extends Component {
             <Sort UpdateMovie={this.handleUpdateMovie} />
           </div>
           <Route exact path='/' render={(props) => <Movies {...props} state={this.state} />} />
-          <Route exact path='/movie' component={Movie} />
+          <Route path="/:movie_id" component={Movie} />
         </div>
       </BrowserRouter>
     )

@@ -13,8 +13,8 @@ class Movies extends Component {
   /* query for each movie to get more in depth details */
 
 
-  handleRoute = () => {
-    this.props.history.push('/movie')
+  handleRoute = (route) => {
+    this.props.history.push('/' + route)
   }
   render() {
     console.log(this.props.state)
@@ -28,7 +28,7 @@ class Movies extends Component {
       } else {
         let url = 'https://image.tmdb.org/t/p/w185/' + movie.poster_path
         return (
-          <div onClick={this.handleRoute} key={index}>
+          <div onClick={() => { this.handleRoute(movie.id) }} key={movie.id}>
             <div className='movie'>
               <img className='poster' src={url} />
               <div className="movie-info">
