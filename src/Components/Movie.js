@@ -3,6 +3,8 @@ import { Link, NavLink, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import '../App.css'
 import CastMembers from './CastMembers'
+import MovieVideo from './MovieVideo'
+import MovieRecommendations from './MovieRecommendations';
 
 class Movie extends Component {
   state = {
@@ -18,7 +20,8 @@ class Movie extends Component {
     language: '',
     runtime: '',
     cast: [],
-    crew: []
+    crew: [],
+    video: []
   }
   componentDidMount() {
     let id = this.props.match.params.movie_id
@@ -40,6 +43,7 @@ class Movie extends Component {
         vote_count: res.data.vote_count,
         language: res.data.original_language,
         runtime: res.data.runtime,
+        video: res.data.videos.results
 
       })
       return axios.get('https://api.themoviedb.org/3/movie/' + this.state.id + '/credits?api_key=3327de82c58bbb5e77470af2495090c6')
@@ -119,8 +123,8 @@ class Movie extends Component {
           </div>
         </div>
         <CastMembers state={this.state} />
-
-
+        <MovieVideo movieKey={this.state.video} />
+        <MovieRecommendations movieId={this.state.id} />
       </div >
     )
   }

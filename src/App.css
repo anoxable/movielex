@@ -197,6 +197,7 @@ table {
   font-family: montserat;
   font-size: 0.9em
 }
+
 meter::-webkit-meter-bar {background: #e6e6e9;
 border-radius: 5px;box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;} /*background color of bar*/
 meter::-webkit-meter-optimum-value {background: green;}
