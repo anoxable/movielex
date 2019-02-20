@@ -56,9 +56,13 @@ table {
   text-align: center;
   margin: 0 auto;
 }
+.App h1 {
+  font-size: 2em;
+}
 .sort {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 .wrapp {
   display: grid;
@@ -180,12 +184,20 @@ table {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-between;
   overflow: hidden;
+  padding:1em;
   box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3);
 }
 .castMember{
-  
-  
+  transition: transform .1s;
 }
+.castMember:hover{
+  
+  cursor:pointer;
+   transform: scale(1.1);
+}
+  
+  
+
 .castMember img{
   border-radius: 5px 5px 0px 0px;
   height:200px;

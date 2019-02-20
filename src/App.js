@@ -35,15 +35,14 @@ class App extends Component {
   handleHome = () => {
     this.componentDidMount()
   }
-
   render() {
     return (
       <BrowserRouter>
         <div className='App'>
-          <h1>Movie-App</h1>
+          <h1>Movielex</h1>
           <div className='sort'>
+            <HomeButton handleHome={this.handleHome} />
             <Search UpdateMovie={this.handleUpdateMovie} />
-            <HomeButton />
             <Sort UpdateMovie={this.handleUpdateMovie} />
           </div>
           <Route exact path='/' render={(props) => <Movies {...props} state={this.state} />} />

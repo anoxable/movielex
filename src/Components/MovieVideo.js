@@ -9,6 +9,7 @@ const MovieVideo = (props) => {
     margin: '0 auto',
     overflowX: 'scroll',
     display: 'grid',
+    justifyItems: 'center',
     gridTemplateColumns: `repeat(${props.movieKey.length}, 1fr)`
 
   }

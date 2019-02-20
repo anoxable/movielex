@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { withRouter } from 'react-router-dom'
 
 class Search extends Component {
   state = {
@@ -14,6 +14,7 @@ class Search extends Component {
     console.log(this.state)
   }
   handleSearch = (e) => {
+    this.props.history.push('/')
     e.preventDefault()
     let movie = this.state.movie
     let url = 'https://api.themoviedb.org/3/search/movie?api_key=3327de82c58bbb5e77470af2495090c6&language=en-US&query=' + movie + '&page=1&include_adult=false'
@@ -24,14 +25,29 @@ class Search extends Component {
     })
 
   }
+
   render() {
+    let formText = {
+      border: 'none',
+      borderRadius: '5px 0px 0px 5px',
+      boxShadow: '0 3px 7px -5px rgba(50, 50, 93, .25), 0 8px 6px -8px rgba(0, 0, 0, .3)',
+      padding: '0.5em  2em',
+
+    }
+    let formButton = {
+      border: 'none',
+      borderRadius: '0px 5px 5px 0px',
+      boxShadow: '0 3px 7px -5px rgba(50, 50, 93, .25), 0 8px 6px -8px rgba(0, 0, 0, .3)',
+      padding: '0.5em  2em',
+      color: 'black'
+    }
     return (
-      <form>
-        <input onChange={this.handleMovie} type='text' placeholder='search' />
-        <button onClick={this.handleSearch}>search</button>
+      <form >
+        <input style={formText} onChange={this.handleMovie} type='text' placeholder='search' />
+        <button style={formButton} onClick={this.handleSearch}>Search</button>
       </form>
     )
   }
 }
 
-export default Search
+export default withRouter(Search)
