@@ -59,6 +59,46 @@ table {
 .App h1 {
   font-size: 2em;
 }
+select{
+  border: none;
+    background-color: white;
+    border-radius:10px;
+    padding: 0.5em 2em;
+    font-family:montserat;
+    box-shadow: 0 3px 7px -5px rgba(50, 50, 93, .25), 0 8px 6px -8px rgba(0, 0, 0, .3)
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #fffefe;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  box-shadow: 0 3px 7px -5px rgba(50, 50, 93, .25), 0 8px 6px -8px rgba(0, 0, 0, .3);
+  align-self: center;
+}
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4286f4;
+  cursor: pointer;
+  border-radius: 10px
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4286f4;
+  cursor: pointer;
+}
 .sort {
   display: flex;
   justify-content: space-evenly;
@@ -97,7 +137,6 @@ table {
 }
 .movie-basic-info{
   display: flex;
-  margin: 
 }
 .movie-basic-info p {
   margin-right: 10px;

@@ -7,6 +7,7 @@ import Movie from './Components/Movie'
 import Sort from './Components/Sort'
 import HomeButton from './Components/HomeButton'
 import { BrowserRouter, Route } from 'react-router-dom'
+import FilterMovies from './Components/FilterMovies'
 
 class App extends Component {
   state = {
@@ -45,6 +46,7 @@ class App extends Component {
             <Search UpdateMovie={this.handleUpdateMovie} />
             <Sort UpdateMovie={this.handleUpdateMovie} />
           </div>
+          <FilterMovies className='App' UpdateMovie={this.handleUpdateMovie} />
           <Route exact path='/' render={(props) => <Movies {...props} state={this.state} />} />
           <Route path="/:movie_id" component={Movie} />
         </div>
